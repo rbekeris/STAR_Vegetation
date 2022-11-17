@@ -1,0 +1,12 @@
+version: "3.8"
+
+services:
+  db:
+    build:
+      context: ./Database
+      dockerfile: Dockerfile
+    ports:
+      #ports=HOST:CONTAINER
+      - "32000:5432"
+    environment:
+      - POSTGRES_PASSWORD=${DB_ADMIN_PASSWORD}

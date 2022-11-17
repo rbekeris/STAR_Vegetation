@@ -1,5 +1,5 @@
 
-FROM postgres:15rc1-bullseye
+FROM postgis/postgis:15-3.3
 
 ENV POSTGRES_PASSWORD: ${DB_ADMIN_PASSWORD}
 
