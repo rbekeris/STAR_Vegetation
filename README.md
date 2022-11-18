@@ -38,7 +38,7 @@ create .env file with variable=value entries as described in [.env_description](
 
 $ docker-compose up --build -d
 
-## TO-DO                                                                                                                                                                                                                                                          - [x] Briefly describe system design
+## TO-DO                                                                                                                                                                                                                                             - [x] Briefly describe system design
 - [x] Create postgresql docker script
 - [x] Make postgresql schema file for WFS data
 - [ ] Create script for pulling WFS data into postgres
