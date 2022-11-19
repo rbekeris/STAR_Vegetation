@@ -22,3 +22,9 @@ CREATE TABLE public.total_production(
     year VARCHAR,
     value NUMERIC(6,1)
 );
+CREATE TABLE public.total_planted_area(
+    id serial PRIMARY KEY,
+    Kultūraugi VARCHAR,
+    year VARCHAR,
+    value NUMERIC(6,1)
+);
