@@ -18,9 +18,7 @@ INSERT INTO "public"."registered_areas" ("wkb_geometry" , "objectid", "period_co
 
 CREATE TABLE public.total_production(
     id serial PRIMARY KEY,
-    crop_name_LV VARCHAR,
-    crop_name_ENG VARCHAR,
-    crop_year_ending int4,
-    period_code VARCHAR,
-    total_production_kt NUMERIC(6,1)
+    Kultūraugi VARCHAR,
+    year VARCHAR,
+    value NUMERIC(6,1)
 );
