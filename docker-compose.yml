@@ -10,3 +10,10 @@ services:
       - "32000:5432"
     environment:
       - POSTGRES_PASSWORD=${DB_ADMIN_PASSWORD}
+  dbt:
+    build:
+      context: ./dbt
+      dockerfile: Dockerfile
+    ports:
+      #ports=HOST:CONTAINER
+      - "32001:8080"
