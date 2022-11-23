@@ -4,7 +4,7 @@ from dotenv import load_dotenv
 import os
 load_dotenv()
 
-connection_string = os.environ['CONNECTION_STRING']
+connection_string = os.environ['CONNECTION_STRING_BETWEEN_CONTAINERS']
 engine = create_engine(connection_string)
 df = pd. read_csv('LAG_planted_area.csv', sep=";",header=1)
 df = df.melt(id_vars="Kultūraugi", var_name='year')

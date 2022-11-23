@@ -1,6 +1,7 @@
 version: "3.8"
 
 services:
+
   db:
     build:
       context: ./Database
@@ -10,6 +11,22 @@ services:
       - "32000:5432"
     environment:
       - POSTGRES_PASSWORD=${DB_ADMIN_PASSWORD}
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready", "-d", "postgres"]
+      interval: 10s
+      timeout: 60s
+      retries: 5
+      start_period: 10s  
+
+  data_loader:
+    build:
+      context: ./Data_Loader
+      dockerfile: Dockerfile
+    env_file: .env
+    depends_on:
+       db: 
+         condition: service_healthy
+
   dbt:
     build:
       context: ./dbt
@@ -19,9 +36,12 @@ services:
       - "8080:8080"
     env_file: .env
     depends_on:
-      - "db"
+      db: 
+        condition: service_healthy
     links:
       - db
+
+
 networks:
   default:
     name: dbt-net
