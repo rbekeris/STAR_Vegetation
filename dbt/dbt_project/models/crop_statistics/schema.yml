@@ -1,0 +1,30 @@
+
+version: 2
+
+sources:
+  - name: latvian_statistics_office
+    database: postgres
+    schema: public
+    tables:
+      - name: total_production
+      - name: total_planted_area
+
+
+models:
+  - name: cleaned_total_production
+    description: "Annual total production data ready for analysis"
+    columns:
+      - name: id
+        description: "The primary key for this table"
+        tests:
+          - unique
+          - not_null
+
+  - name: cleaned_total_planted_area
+    description: "Data on annual total planted area ready for analysis"
+    columns:
+      - name: id
+        description: "The primary key for this table"
+        tests:
+          - unique
+          - not_null
