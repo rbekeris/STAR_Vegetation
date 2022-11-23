@@ -15,7 +15,7 @@ WORKDIR /dbt_project
 RUN dbt deps
 
 # Specify profiles directory
-ENV DBT_PROFILES_DIR=.dbt
+ENV DBT_PROFILES_DIR=/dbt_project
 
 # Expose port for dbt docs
 EXPOSE 8080

@@ -1,0 +1,12 @@
+dbt_project:
+  target: prod
+  outputs:
+    prod:
+      type: postgres
+      host: localhost
+      # IMPORTANT: Make sure to quote the entire Jinja string here
+      user: "{{ env_var('DBT_USER') }}"
+      password: "{{ env_var('DB_ADMIN_PASSWORD') }}"
+      port: "{{ env_var('DB_PORT') }}"
+      dbname: "{{ env_var('DB_NAME') }}"
+      schema: "{{ env_var('DB_SCHEMA') }}"
