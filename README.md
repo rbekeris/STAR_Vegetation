@@ -44,7 +44,7 @@ $ docker-compose up --build -d
 - [ ] Create script for pulling WFS data into postgres
 - [ ] Make postgresql schema file for VH data
 - [ ] Create script for pulling .VH.nc files into postgres
-- [ ] Create dbt docker script
+- [x] Create dbt docker script
 - [ ] Create transform for dbt to match each field with it's VH estimate
-- [ ] Create docker-compose file for running the stack
+- [x] Create docker-compose file for running the stack
 - [ ] Write query for "local crop condition estimates" E.G., "What is the condition of oat crop near Rezekne?"
