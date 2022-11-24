@@ -7,7 +7,7 @@ Repository for wotking with NOAA STAR data
 
 **[Python module for working with netCDF (.VH.nc) files ](https://www.star.nesdis.noaa.gov/smcd/emb/vci/VH_doc/VHP_uguide_v2.0_2018_0727.pdf)**
 
-**[Latvian Registered crop areas WFS](https://www.lad.gov.lv/lv/atbalsta-veidi/platibu-maksajumi/lauku-registrs-un-karte/lauku-registra-dati/)**
+**[Latvian Registered crop areas WFS](https://karte.lad.gov.lv/arcgis/services/lauki/MapServer/WFSServer?service=wfs&request=GetCapabilities)**
 
 **[dbt core docker image location](https://github.com/dbt-labs/dbt-core/pkgs/container/dbt-postgres)**
 
