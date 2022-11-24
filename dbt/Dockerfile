@@ -7,6 +7,7 @@ ENV DB_SCHEMA=public
 
 COPY dbt_project/ /dbt_project
 COPY requirements.txt .
+COPY commands.sh /dbt_project/commands.sh
 
 # Update and install system packages
 RUN apt-get update -y 
@@ -22,8 +23,11 @@ RUN dbt deps
 # Specify profiles directory
 ENV DBT_PROFILES_DIR=/dbt_project
 
+# since we want to run more than one dbt command on startup, lets place them in a shell script
+RUN chmod +x commands.sh
+
 # run dbt 
-ENTRYPOINT ["dbt","run"]
+ENTRYPOINT ["sh", "/dbt_project/commands.sh"]
 
 # Expose port for dbt docs
 EXPOSE 8080
