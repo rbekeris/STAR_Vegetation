@@ -14,7 +14,7 @@ models:
   - name: cleaned_total_production
     description: "Annual total production data ready for analysis"
     columns:
-      - name: id
+      - name: index
         description: "The primary key for this table"
         tests:
           - unique
@@ -23,8 +23,11 @@ models:
   - name: cleaned_total_planted_area
     description: "Data on annual total planted area ready for analysis"
     columns:
-      - name: id
+      - name: index
         description: "The primary key for this table"
         tests:
           - unique
           - not_null
+
+  - name: yield
+    description: "Crop yields in mt/ha"
